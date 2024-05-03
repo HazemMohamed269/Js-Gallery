@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Oswald", sans-serif;
+}
+
+.wrapper {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 8%;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    cursor: pointer;
+}
+
+.gallery .image img {
+    width: 100%;
+    transition: all 0.3s ease;
+    opacity: 0.8;
+}
+
+.gallery span {
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+}
+
+.gallery .image img:hover {
+    transform: scale(1.1);
+    opacity: 1;
+}
+
+.previwe-box {
+    position: fixed;
+    max-width: 700px;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.9);
+    background: #eee;
+    padding: 0 5px 5px 5px;
+    border-radius: 5px;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.previwe-box.show {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, -50%) scale(1);
+    transition: all 0.3s ease;
+}
+
+.previwe-box .details {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 15px 12px 10px;
+}
+
+.previwe-box .details .icon {
+    font-size: 25px;
+    cursor: pointer;
+    color: cadetblue;
+}
+
+.details .title {
+    display: flex;
+    font-size: 18px;
+    font-weight: 500;
+    color: cadetblue;
+}
+
+.details .title p {
+    margin: 0 5px;
+    color: cadetblue;
+}
+
+.details .title p.current-img {
+    font-weight: 600;
+}
+
+.previwe-box .img-box {
+    display: flex;
+    width: 100%;
+}
+
+.previwe-box .img-box img {
+    width: 100%;
+    border-radius: 0 0 3px 3px;
+}
+
+.img-box .slide {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 30px;
+    cursor: pointer;
+    width: 50px;
+    line-height: 50px;
+    text-align: center;
+    color: cadetblue;
+}
+
+.img-box .slide.prev {
+    left: 0;
+}
+
+.img-box .slide.next {
+    right: 0;
+}
